@@ -8,7 +8,10 @@
       "Bash(tasklist)",
       "Bash(rm -f \"C:/Users/Karishma/Music/CourseQuest-New/.git/index.lock\")",
       "Bash(git add *)",
-      "Bash(echo \"EXIT:$?\")"
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(awk '{print $1}' \"C:\\\\Users\\\\Karishma\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Karishma-Music-CourseQuest-New\\\\042610dd-b3ec-4335-8789-4309d4f493de\\\\scratchpad\\\\guids.txt\")",
+      "Bash(xargs -0 grep -l -F -f \"C:\\\\Users\\\\Karishma\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Karishma-Music-CourseQuest-New\\\\042610dd-b3ec-4335-8789-4309d4f493de\\\\scratchpad\\\\guidonly.txt\")",
+      "Bash(xargs grep -l -F -f \"C:\\\\Users\\\\Karishma\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Karishma-Music-CourseQuest-New\\\\042610dd-b3ec-4335-8789-4309d4f493de\\\\scratchpad\\\\guidonly.txt\")"
     ]
   }
 }
