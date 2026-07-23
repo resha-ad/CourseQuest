@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1294411035
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3fd135db4c4a1857c7257aea77e67973
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3fd135db4c4a1857c7257aea77e67973
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Sounds/poor.wav
+- Assets/Sounds/analyze.wav
+- Assets/Sounds/good.wav
+- Assets/Sounds/avg.wav
+Dependencies: []

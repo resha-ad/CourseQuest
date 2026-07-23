@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unity-mcp-cli run-tool *)",
+      "mcp__ai-game-developer__scene-list-opened",
+      "mcp__ai-game-developer__scene-get-data",
+      "Bash(powershell -NoProfile -Command \"Get-Process git -ErrorAction SilentlyContinue | Select-Object Id,StartTime,Path\")",
+      "Bash(tasklist)",
+      "Bash(rm -f \"C:/Users/Karishma/Music/CourseQuest-New/.git/index.lock\")",
+      "Bash(git add *)",
+      "Bash(echo \"EXIT:$?\")"
+    ]
+  }
+}

@@ -1,0 +1,844 @@
+{
+  "questions": [
+    {
+      "questionID": 1,
+      "questionText": "Which of these careers excites you the most?",
+      "videoFile": "Q1.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Software Developer",
+          "course": "Computing",
+          "explanation": "You'll build apps and tools people use every day, from websites to mobile games. Focus on coding, teamwork, and turning creative ideas into real software."
+        },
+        {
+          "optionID": "B",
+          "text": "Cybersecurity Analyst",
+          "course": "Cybersecurity",
+          "explanation": "You'll protect networks from hackers and keep information safe. Grow your problem-solving skills, stay alert, and learn about new cyber threats and defenses."
+        },
+        {
+          "optionID": "C",
+          "text": "AI Engineer",
+          "course": "AI",
+          "explanation": "You'll design smart systems that can learn and think, like chatbots or self-driving cars. Dive into data, math, and algorithms to help machines solve problems."
+        }
+      ]
+    },
+    {
+      "questionID": 2,
+      "questionText": "What kind of tasks do you enjoy?",
+      "videoFile": "Q2.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Finding bugs in systems",
+          "course": "Cybersecurity",
+          "explanation": "You like spotting flaws and testing security like an ethical hacker. Grow your curiosity and learn tools that keep systems safe from attacks."
+        },
+        {
+          "optionID": "B",
+          "text": "Designing algorithms",
+          "course": "AI",
+          "explanation": "You enjoy creating smart steps for computers to follow. Strengthen your math and coding skills to build clever AI solutions."
+        },
+        {
+          "optionID": "C",
+          "text": "Building applications",
+          "course": "Computing",
+          "explanation": "You like turning ideas into working apps. Keep improving your coding and teamwork to create real software people use."
+        }
+      ]
+    },
+    {
+      "questionID": 3,
+      "questionText": "If you had to work on a big project, what role would you prefer?",
+      "videoFile": "Q3.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Problem solver and planner",
+          "course": "Computing",
+          "explanation": "You'd plan tasks and fix problems along the way. Build leadership and teamwork skills to run smooth projects and deliver great results."
+        },
+        {
+          "optionID": "B",
+          "text": "Security checker and tester",
+          "course": "Cybersecurity",
+          "explanation": "You'd test systems for weaknesses and keep data safe. Learn to run security checks and write clear reports to help teams stay protected."
+        },
+        {
+          "optionID": "C",
+          "text": "Innovator and researcher",
+          "course": "AI",
+          "explanation": "You'd test new ideas and explore future tech. Stay curious and sharpen your research and data skills to push AI forward."
+        }
+      ]
+    },
+    {
+      "questionID": 4,
+      "questionText": "What excites you more?",
+      "videoFile": "Q4.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Learning how machines think",
+          "course": "AI",
+          "explanation": "You're curious about smart tech and automation. Focus on data, algorithms, and how machines solve problems like humans."
+        },
+        {
+          "optionID": "B",
+          "text": "Preventing online threats",
+          "course": "Cybersecurity",
+          "explanation": "You like staying one step ahead of hackers and protecting systems. Build quick thinking and practice real-world security skills."
+        },
+        {
+          "optionID": "C",
+          "text": "Creating software tools",
+          "course": "Computing",
+          "explanation": "You enjoy building apps that help people work, play, or connect. Focus on coding, testing, and turning ideas into real products."
+        }
+      ]
+    },
+    {
+      "questionID": 5,
+      "questionText": "Which topic would you want to explore further?",
+      "videoFile": "Q5.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Data privacy",
+          "course": "Cybersecurity",
+          "explanation": "You care about keeping people's data safe. Learn about online privacy laws, encryption, and how to secure information."
+        },
+        {
+          "optionID": "B",
+          "text": "Neural networks",
+          "course": "AI",
+          "explanation": "You're excited by how AI learns like a brain. Dive into machine learning, math, and data science to build smart systems."
+        },
+        {
+          "optionID": "C",
+          "text": "Software engineering",
+          "course": "Computing",
+          "explanation": "You want to design and build reliable software. Focus on coding, testing, and working with others to build complex systems."
+        }
+      ]
+    },
+    {
+      "questionID": 6,
+      "questionText": "What does HTML stand for?",
+      "videoFile": "Q6.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q6.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Hyper Trainer Markup Language",
+          "isCorrect": false,
+          "explanation": "Incorrect.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Hyper Text Markup Language",
+          "isCorrect": true,
+          "explanation": "Correct! HTML structures web pages.",
+          "course": "Computing"
+        },
+        {
+          "optionID": "C",
+          "text": "Home Tool Markup Language",
+          "isCorrect": false,
+          "explanation": "Incorrect.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 7,
+      "questionText": "Which of these is a strong password?",
+      "videoFile": "Q7.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q7.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "password123",
+          "isCorrect": false,
+          "explanation": "Weak password.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "HelloWorld",
+          "isCorrect": false,
+          "explanation": "Too simple.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "X$9!q@T#nP",
+          "isCorrect": true,
+          "explanation": "Correct! Strong and complex.",
+          "course": "Cybersecurity"
+        }
+      ]
+    },
+    {
+      "questionID": 8,
+      "questionText": "What will `5 > 3 and 2 < 1` evaluate to?",
+      "videoFile": "Q8.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q8.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "True",
+          "isCorrect": false,
+          "explanation": "Check both conditions.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "False",
+          "isCorrect": true,
+          "explanation": "Correct! 5 > 3 is true but 2 < 1 is false.",
+          "course": "AI"
+        },
+        {
+          "optionID": "C",
+          "text": "Error",
+          "isCorrect": false,
+          "explanation": "No syntax error here.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 9,
+      "questionText": "Which is a data structure?",
+      "videoFile": "Q9.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q9.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "If-else",
+          "isCorrect": false,
+          "explanation": "That’s a control statement.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "While",
+          "isCorrect": false,
+          "explanation": "This is a loop.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "Array",
+          "isCorrect": true,
+          "explanation": "Correct! Arrays store data.",
+          "course": "Computing"
+        }
+      ]
+    },
+    {
+      "questionID": 10,
+      "questionText": "Which number is next in the pattern: 2, 4, 8, 16, ___?",
+      "videoFile": "Q10.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q10.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "20",
+          "isCorrect": false,
+          "explanation": "Check the pattern again.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "32",
+          "isCorrect": true,
+          "explanation": "Correct! Pattern doubles each time.",
+          "course": "AI"
+        },
+        {
+          "optionID": "C",
+          "text": "18",
+          "isCorrect": false,
+          "explanation": "Doesn’t fit the doubling rule.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 11,
+      "questionText": "What is Phishing?",
+      "videoFile": "Q11.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q11.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Fishing using drones",
+          "isCorrect": false,
+          "explanation": "Not related.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Social engineering attack",
+          "isCorrect": true,
+          "explanation": "Correct! It tricks people for info.",
+          "course": "Cybersecurity"
+        },
+        {
+          "optionID": "C",
+          "text": "Device cloning",
+          "isCorrect": false,
+          "explanation": "Not exactly phishing.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 12,
+      "questionText": "What does AI stand for?",
+      "videoFile": "Q12.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q12.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Artificial Interface",
+          "isCorrect": false,
+          "explanation": "Wrong term.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Automatic Intelligence",
+          "isCorrect": false,
+          "explanation": "Wrong expansion.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "Artificial Intelligence",
+          "isCorrect": true,
+          "explanation": "Correct!",
+          "course": "AI"
+        }
+      ]
+    },
+    {
+      "questionID": 13,
+      "questionText": "Which of these is NOT a programming language?",
+      "videoFile": "Q13.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q13.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Python",
+          "isCorrect": false,
+          "explanation": "Python is a language.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Java",
+          "isCorrect": false,
+          "explanation": "Java is a language.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "Excel",
+          "isCorrect": true,
+          "explanation": "Correct! Excel is a spreadsheet tool.",
+          "course": "Computing"
+        }
+      ]
+    },
+    {
+      "questionID": 14,
+      "questionText": "What does “loop” mean in programming?",
+      "videoFile": "Q14.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q14.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Repeating actions",
+          "isCorrect": true,
+          "explanation": "Correct!",
+          "course": "Computing"
+        },
+        {
+          "optionID": "B",
+          "text": "Storing data",
+          "isCorrect": false,
+          "explanation": "That’s a variable or structure.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "Testing variables",
+          "isCorrect": false,
+          "explanation": "Not exactly.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 15,
+      "questionText": "If A = True and B = False, what is A AND B?",
+      "videoFile": "Q15.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q15.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "True",
+          "isCorrect": false,
+          "explanation": "Check logic AND truth table.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "False",
+          "isCorrect": true,
+          "explanation": "Correct! AND needs both True.",
+          "course": "AI"
+        },
+        {
+          "optionID": "C",
+          "text": "Error",
+          "isCorrect": false,
+          "explanation": "This is valid logic.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 16,
+      "questionText": "You prefer working:",
+      "videoFile": "Q16.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Alone on deep problems",
+          "course": "AI",
+          "explanation": "You enjoy working independently and thinking deeply — ideal for AI, where solving complex problems and designing intelligent systems requires focused research and logic."
+        },
+        {
+          "optionID": "B",
+          "text": "In a team under pressure",
+          "course": "Cybersecurity",
+          "explanation": "You perform well under pressure and enjoy fast-paced teamwork. These traits are essential in Cybersecurity, where real-time collaboration often prevents major security threats."
+        },
+        {
+          "optionID": "C",
+          "text": "In a flexible creative environment",
+          "course": "Computing",
+          "explanation": "You thrive in environments that allow creativity and freedom. In Computing, this mindset helps you experiment with design, user experience, and innovative app development."
+        }
+      ]
+    },
+    {
+      "questionID": 17,
+      "questionText": "You handle errors by:",
+      "videoFile": "Q17.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Googling the fix and debugging",
+          "course": "Computing",
+          "explanation": "You’re a self-starter who learns through exploration. This practical, trial-and-error approach is key in Computing, where debugging and iteration are part of the development process."
+        },
+        {
+          "optionID": "B",
+          "text": "Understanding the root cause",
+          "course": "AI",
+          "explanation": "You dig deep to uncover what’s really going wrong — a mindset that fits AI well, where understanding logic and system behavior helps create smarter, more accurate models."
+        },
+        {
+          "optionID": "C",
+          "text": "Reporting and avoiding further damage",
+          "course": "Cybersecurity",
+          "explanation": "You think defensively and prioritize damage control — this is essential in Cybersecurity, where quick response and risk management protect systems from real-world threats."
+        }
+      ]
+    },
+    {
+      "questionID": 18,
+      "questionText": "You are best described as:",
+      "videoFile": "Q18.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Curious and analytical",
+          "course": "AI",
+          "explanation": "You question how things work and enjoy solving puzzles — exactly the mindset needed in AI, where analysis and logic power everything from pattern recognition to machine learning."
+        },
+        {
+          "optionID": "B",
+          "text": "Observant and strategic",
+          "course": "Cybersecurity",
+          "explanation": "You pay attention to detail and think a few steps ahead — perfect for Cybersecurity, where being alert and strategic helps protect systems from evolving threats."
+        },
+        {
+          "optionID": "C",
+          "text": "Practical and hands-on",
+          "course": "Computing",
+          "explanation": "You like turning ideas into real, working tools. In Computing, this translates into coding, testing, and deploying software that makes a difference in the world."
+        }
+      ]
+    },
+    {
+      "questionID": 19,
+      "questionText": "You prefer learning from:",
+      "videoFile": "Q19.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Books and research papers",
+          "course": "AI",
+          "explanation": "You enjoy diving deep into topics and uncovering patterns. This reflective style suits AI, where reading research helps you build smarter systems."
+        },
+        {
+          "optionID": "B",
+          "text": "Tutorials and hands-on tasks",
+          "course": "Cybersecurity",
+          "explanation": "You learn by doing — great for Cybersecurity! Hands-on tasks like penetration testing and simulations will sharpen your threat-fighting skills."
+        },
+        {
+          "optionID": "C",
+          "text": "Lectures and assignments",
+          "course": "Computing",
+          "explanation": "You thrive in structured learning. In Computing, following lessons and applying them through assignments helps you master programming and development."
+        }
+      ]
+    },
+    {
+      "questionID": 20,
+      "questionText": "In a tech club, you’d be:",
+      "videoFile": "Q20.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Trying to hack and defend systems",
+          "course": "Cybersecurity",
+          "explanation": "You like a challenge and enjoy breaking things to fix them. This mindset is essential in Cybersecurity, where defending systems starts with understanding their weaknesses."
+        },
+        {
+          "optionID": "B",
+          "text": "Building machine-learning projects",
+          "course": "AI",
+          "explanation": "You enjoy experimenting with smart technologies. AI projects let you turn logic, data, and creativity into powerful tools that learn and adapt."
+        },
+        {
+          "optionID": "C",
+          "text": "Creating apps and websites",
+          "course": "Computing",
+          "explanation": "You’re a builder at heart. Turning ideas into real-world apps is at the core of Computing — where creativity meets practical coding."
+        }
+      ]
+    },
+    {
+      "questionID": 21,
+      "questionText": "When you learn something new, you prefer:",
+      "videoFile": "Q21.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Watching videos",
+          "course": "AI",
+          "explanation": "You’re a visual learner. This style is great for understanding complex AI topics through animations, demos, and video-based examples."
+        },
+        {
+          "optionID": "B",
+          "text": "Trying it yourself",
+          "course": "Cybersecurity",
+          "explanation": "You learn best by doing — perfect for Cybersecurity, where practice with tools and simulations sharpens your skills in real-time threat detection."
+        },
+        {
+          "optionID": "C",
+          "text": "Reading articles",
+          "course": "Computing",
+          "explanation": "You absorb knowledge through reading. In Computing, staying updated with documentation and dev blogs helps you grow as a coder."
+        }
+      ]
+    },
+    {
+      "questionID": 22,
+      "questionText": "You study best when:",
+      "videoFile": "Q22.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "You talk it out",
+          "course": "Computing",
+          "explanation": "You learn by discussing and collaborating. This is perfect for software teams, where communication and teamwork build better solutions."
+        },
+        {
+          "optionID": "B",
+          "text": "You write it down",
+          "course": "Cybersecurity",
+          "explanation": "Writing helps you remember. This matches Cybersecurity, where documenting processes and creating reports is vital to staying organized and secure."
+        },
+        {
+          "optionID": "C",
+          "text": "You visualize it",
+          "course": "AI",
+          "explanation": "You think in pictures and flowcharts. This is ideal for AI, where modeling systems and data flow helps make abstract concepts clearer."
+        }
+      ]
+    },
+    {
+      "questionID": 23,
+      "questionText": "What motivates you more?",
+      "videoFile": "Q23.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Solving puzzles",
+          "course": "AI",
+          "explanation": "You love tackling problems that challenge your logic. That’s what AI is all about — finding patterns, solving mysteries, and creating intelligent systems."
+        },
+        {
+          "optionID": "B",
+          "text": "Competing in challenges",
+          "course": "Cybersecurity",
+          "explanation": "You thrive on adrenaline and quick thinking. Cybersecurity competitions like CTFs fit your competitive, fast-paced mindset."
+        },
+        {
+          "optionID": "C",
+          "text": "Creating new features",
+          "course": "Computing",
+          "explanation": "You’re driven by making something useful. In Computing, you get to build features that improve lives and solve real problems."
+        }
+      ]
+    },
+    {
+      "questionID": 24,
+      "questionText": "In group work, you often:",
+      "videoFile": "Q24.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Take the lead",
+          "course": "Cybersecurity",
+          "explanation": "You take charge and keep things on track — a great trait in Cybersecurity where leadership is key in managing security strategies."
+        },
+        {
+          "optionID": "B",
+          "text": "Analyze ideas",
+          "course": "AI",
+          "explanation": "You reflect and evaluate before acting. In AI, this thoughtful approach helps build smarter, data-driven systems."
+        },
+        {
+          "optionID": "C",
+          "text": "Do the practicals",
+          "course": "Computing",
+          "explanation": "You enjoy being hands-on. In Computing, jumping into code and testing brings your team’s ideas to life."
+        }
+      ]
+    },
+    {
+      "questionID": 25,
+      "questionText": "Your school teachers likely said:",
+      "videoFile": "Q25.mp4",
+      "questionType": "preference",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Very analytical and deep thinker",
+          "course": "AI",
+          "explanation": "You break problems into patterns — perfect for AI. Your analytical mindset helps build intelligent solutions that mimic real-world logic."
+        },
+        {
+          "optionID": "B",
+          "text": "Quick and alert",
+          "course": "Cybersecurity",
+          "explanation": "You’re fast on your feet and sharp with details. Cybersecurity needs quick thinking to spot and stop threats in real time."
+        },
+        {
+          "optionID": "C",
+          "text": "Smart and diligent",
+          "course": "Computing",
+          "explanation": "You’re dependable and focused. In Computing, this lets you write quality code, test it thoroughly, and build powerful software."
+        }
+      ]
+    },
+    {
+      "questionID": 26,
+      "questionText": "What is Machine Learning used for?",
+      "videoFile": "Q26.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q26.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Creating viruses",
+          "isCorrect": false,
+          "explanation": "Wrong purpose.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Teaching computers to learn",
+          "isCorrect": true,
+          "explanation": "Correct!",
+          "course": "AI"
+        },
+        {
+          "optionID": "C",
+          "text": "Installing OS",
+          "isCorrect": false,
+          "explanation": "Not related.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 27,
+      "questionText": "What is a firewall used for?",
+      "videoFile": "Q27.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q27.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Backup",
+          "isCorrect": false,
+          "explanation": "That’s for data safety, not firewalls.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Data transfer",
+          "isCorrect": false,
+          "explanation": "Unrelated.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "Network protection",
+          "isCorrect": true,
+          "explanation": "Correct!",
+          "course": "Cybersecurity"
+        }
+      ]
+    },
+    {
+      "questionID": 28,
+      "questionText": "What’s the output of: print(2 + 3 * 4)?",
+      "videoFile": "Q28.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q28.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "20",
+          "isCorrect": false,
+          "explanation": "Check order of operations.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "14",
+          "isCorrect": true,
+          "explanation": "Correct! Multiplication happens first.",
+          "course": "AI"
+        },
+        {
+          "optionID": "C",
+          "text": "24",
+          "isCorrect": false,
+          "explanation": "Check your math!",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 29,
+      "questionText": "AI relies most on:",
+      "videoFile": "Q29.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q29.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Rules",
+          "isCorrect": false,
+          "explanation": "Old expert systems, not modern AI.",
+          "course": null
+        },
+        {
+          "optionID": "B",
+          "text": "Data",
+          "isCorrect": true,
+          "explanation": "Correct! AI learns from data.",
+          "course": "AI"
+        },
+        {
+          "optionID": "C",
+          "text": "Design",
+          "isCorrect": false,
+          "explanation": "Design helps but isn’t core.",
+          "course": null
+        }
+      ]
+    },
+    {
+      "questionID": 30,
+      "questionText": "Which career is best for someone who loves reverse-engineering?",
+      "videoFile": "Q30.mp4",
+      "questionType": "knowledge",
+      "feedbackVideo": "Feedback_Q30.mp4",
+      "options": [
+        {
+          "optionID": "A",
+          "text": "Cybersecurity",
+          "isCorrect": true,
+          "explanation": "Correct! Reverse-engineering is core to hacking.",
+          "course": "Cybersecurity"
+        },
+        {
+          "optionID": "B",
+          "text": "Project Manager",
+          "isCorrect": false,
+          "explanation": "They plan, not reverse-engineer.",
+          "course": null
+        },
+        {
+          "optionID": "C",
+          "text": "AI Ethics Lead",
+          "isCorrect": false,
+          "explanation": "Focuses on AI policy, not low-level code.",
+          "course": null
+        }
+      ]
+    }
+  ]
+}

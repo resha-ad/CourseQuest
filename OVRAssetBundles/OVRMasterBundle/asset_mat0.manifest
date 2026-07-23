@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 3409023583
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5f4b853f867d65a254e4bca139b3e853
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b30fce1a9ad74efb72be6c308c56e365
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5f4b853f867d65a254e4bca139b3e853
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Materials/DebugDrawLine.mat
+- Assets/Fantasy Skybox FREE/Panoramics/FS002/FS002_Day_Sunless.mat
+- Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Materials/Red.mat
+Dependencies:
+- D:/cyber security projects (thesis-proposal)/NutritionApp - Copy/NutritionApp -
+  Copy/OVRAssetBundles/OVRMasterBundle/asset_png0

@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 1957820581
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fee6befa182f50372119ea5100db82e6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2d8df09e698f722ada1caa03d3413830
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: fee6befa182f50372119ea5100db82e6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Textures/OCUI_24_Filled_2x.png
+- Assets/Sounds/Sad-Face-Emoji.png
+- Assets/Sounds/HAPPY-removebg-preview.png
+- Assets/Fantasy Skybox FREE/Panoramics/FS002/FS002_Day_Sunless.png
+- Assets/Sounds/face-1298202_640.png
+Dependencies: []
