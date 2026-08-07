@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/library.unity
     guid: 0d37a9689603a974cb5e2d5701c30e30
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
     path: Assets/Scenes/SciFiVR.unity
     guid: b259bdc830ed15d4f9448d170bc08d1f
   - enabled: 0
