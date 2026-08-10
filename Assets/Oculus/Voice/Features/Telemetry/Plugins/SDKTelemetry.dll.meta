@@ -38,7 +38,7 @@ PluginImporter:
     second:
       enabled: 1
       settings:
-        CPU: AnyCPU
+        CPU: X86_64
         DefaultValueInitialized: true
         OS: AnyOS
   - first:
