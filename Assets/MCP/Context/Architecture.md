@@ -14,8 +14,13 @@ recommends one of three tracks — AI, Computing, or Cybersecurity — based on 
   full migration. They ship files with GUIDs that collide with the existing `Assets/Oculus` content and
   will corrupt the asset database if installed alongside it. If a Package Manager popup suggests
   upgrading, decline it — the legacy integration is what the shipped app actually runs on.
-- No XR Interaction Toolkit or Input System package installed as of this writing — VR interaction is
-  hand-rolled against `OVRInput` (button/trigger polling) and `Transform` positions, not XRI interactables.
+- The **live shipped app's** VR interaction (quiz UI, controller vibration) is hand-rolled against
+  `OVRInput` (button/trigger polling) and `Transform` positions, not XRI interactables — that's the
+  existing, working pattern, don't rewrite it without reason.
+- `com.unity.inputsystem` and `com.unity.xr.interaction.toolkit` (3.5.0) are now also installed, for use
+  in **new** prototype/dev work. `Active Input Handling` (Project Settings → Player) is set to **Both**
+  so the new Input System is available without breaking the existing `OVRInput` code — do not change
+  this to "Input System Package (New)" only.
 
 ## Core Systems
 
