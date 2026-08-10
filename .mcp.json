@@ -1,8 +1,12 @@
 {
   "mcpServers": {
-    "ai-game-developer": {
-      "type": "http",
-      "url": "http://localhost:26854/p/260fe09d"
+    "unity-mcp": {
+      "command": "node",
+      "args": ["C:/Users/Karishma/Music/unity-mcp-server/src/index.js"],
+      "env": {
+        "UNITY_HUB_PATH": "C:\\Program Files\\Unity Hub\\Unity Hub.exe",
+        "UNITY_BRIDGE_PORT": "7890"
+      }
     }
   }
 }
