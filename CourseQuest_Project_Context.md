@@ -34,6 +34,64 @@ The VR classroom environment itself is built from a mix of asset-store packs (`A
 
 ---
 
+## 2b. Screen-by-screen UI inventory (verified live, via Unity MCP — not inferred from code)
+
+Everything below was pulled directly from the actual scene hierarchies and the `SurveyManager` component's live Inspector references, not guessed from script reading. All canvases are **world-space** (not screen-space overlay), sized/positioned for VR headset viewing, and use **`OVRRaycaster`** + a shared **laser-pointer** (`UIHelpers/LaserPointer` + `EventSystem` with `OVRInputModule`) for controller-based button interaction — point the controller at a button, click the trigger. This is the interaction model across the entire app; nothing uses grab/physics interactions.
+
+### TechLab.unity (landing scene)
+
+Environment: a sci-fi biolab corridor set (`SciFiBiolabCorridor` — arc, doors, floor/wall decoration, greenhouse, roof tube), plus a standalone `CartoonRobot` (animated, has an `Animator`) and a `MapPointerMat` decorative mesh.
+
+| Canvas | State on load | Contents |
+|---|---|---|
+| `MainVideoCanvas` | active | `RawImage` + `VideoPlayer` (main looping/idle video) + one `Button` (`MainCanvasButton` — starts the flow) |
+| `WelcomeVideoCanvas` | inactive | `RawImage` + `VideoPlayer` (welcome video) + `NextButton` |
+
+Note: the welcome video's texture is routed through a `RenderTexture` asset (`Assets/15.vid/WelcomeVideoTexture.renderTexture`) rather than playing a `.mp4` directly like every other video in the app — a different technical path for this one video, worth knowing if it ever needs debugging.
+
+### ClassRoom.unity (quiz scene)
+
+Environment: `Classroom Touchpad` — a full modeled classroom (desks, podium, whiteboards x3, control panel, glass door, projector, "Sony MAS" screen prop) plus four decorative robot models standing around the room (`mrc_nm_aveline_robot_result_1` — a rigged animal-like robot with full skeleton, `roboKawaii_last`, `monitor corupted bot`, `CartoonRobot`).
+
+| Canvas | State on load | Contents |
+|---|---|---|
+| `MainVideoCanvas` | inactive | `RawImage` + `VideoPlayer` + `Button` (has `MainCanvasButton`) |
+| `WelcomeVideoCanvas` | inactive | `RawImage` + `VideoPlayer` + `NextButton` |
+| `KnowledgeIntroCanvas` | **active on load** | `RawImage` + `VideoPlayer` (knowledge-phase intro video) + `Button` |
+| `Q1VideoCanvas` | inactive | Question video (`RawImage`+`VideoPlayer`) + `OptionsPanel` (`VerticalLayoutGroup` with `OptionAButton`/`OptionBButton`/`OptionCButton`, each with its own TMP label) + `ReplayButton` |
+| `PrefernceIntroCanvas` *(sic)* | inactive | Video + `Button` — transition into the preference-question phase |
+| `CollectiveFeedbackCanvas` | inactive | Video + `ContinueButton` — plays one of 6 `Preference_Feedback_<A>_<B>.mp4` combination videos |
+| `QuizEndCanvas` | inactive | `ViewResultButton` (→ Recommendation) + `CheckButton` (→ Points, itself starts inactive until shown) — no video, just the two-choice branch screen |
+| `RecommendationCanvas` | inactive | Video (`AI`/`Computing`/`Cybersecurity`_Recommendation.mp4) + `HomeButton` |
+| `PointsCanvas` | inactive | Plain `PointsText (TMP)` (raw JSON + point totals dump) + `BackButton` |
+| `AnswerCanvas1` | inactive | `Answer1Text (TMP)` + `ContinueButton` — **part of the confirmed-broken review flow, see §8** |
+| `AnswerCanvas2` | inactive | `Answer2Text (TMP)` + `ContinueButton2` — **same broken flow** |
+| `FeedbackCanvas` | inactive | Per-question feedback video + standalone TMP text + `ContinueButton` |
+
+All canvases share the same visual language: a video frame (`RawImage` bound to a `VideoPlayer`) as the dominant element, TextMeshPro for any text, and flat `Button`+`Image` UI buttons — no custom button states, animations, or visual feedback beyond Unity's default button tint, anywhere in the app.
+
+### Visual effects actually wired in (via `SurveyManager`'s Inspector references — confirmed, not assumed)
+
+| Trigger | Effect prefab used | Source pack |
+|---|---|---|
+| Correct knowledge answer | `IceEffect3` | `Assets/100BestEffectPack/Effects/IceEffect/` |
+| Wrong knowledge answer | `FireEffect10` | `Assets/100BestEffectPack/Effects/FireEffect/` |
+| Preference answer selected | `BasicSpark 4 (Shower)` | `Assets/Sherbbs Particle Collection/Particles/Normal/` |
+| Quiz completion (`QuizEndCanvas` shown) | `BirthdayConfetti + Streamers` | `Assets/Sherbbs Particle Collection/Particles/Normal/` |
+
+Worth noting for a redesign discussion: these are generic asset-pack effects with no thematic connection to the quiz content (ice for "correct," fire for "wrong," birthday confetti for finishing an educational quiz) — functional, not designed-for-purpose.
+
+### Video asset inventory (`Assets/StreamingAssets/`, all `.mp4`)
+
+- **30 question videos**: `Q1.mp4` – `Q30.mp4`
+- **6 knowledge-question feedback videos**: `Feedback_Q4`, `Q5`, `Q6`, `Q8`, `Q9`, `Q10` — note this is only 6 of the ~15 knowledge questions; the rest have no feedback video despite `SurveyManager`'s JSON schema supporting a `feedbackVideo` field per question
+- **3 course recommendation videos**: `AI_Recommendation`, `Computing_Recommendation`, `Cybersecurity_Recommendation`
+- **6 preference-combination feedback videos**: all ordered pairs of AI/Computing/Cybersecurity (`Preference_Feedback_AI_Computing`, `_Computing_AI`, `_AI_Cybersecurity`, `_Cybersecurity_AI`, `_Computing_Cybersecurity`, `_Cybersecurity_Computing`)
+
+Audio: `Assets/Sound/correct_audio.mp3` and `Assets/Sound/wrong_audio.wav` play alongside the correct/wrong particle effects on knowledge questions.
+
+---
+
 ## 3. Screen-by-screen user flow (live/active system)
 
 Driven mainly by `Assets/Scripts/SurveyManager.cs`, with scene transitions centralized in a singleton `SceneManagerController` (`Assets/SceneManager.cs`, `DontDestroyOnLoad`, exposes `LoadTechLabScene()` / `LoadClassRoomScene()`).
@@ -173,7 +231,11 @@ The project is now under git version control (`git init` + baseline commit, so a
 - Analytics/instructor-facing dashboard: cloud data currently isn't summarized anywhere except a personal leaderboard — an instructor/admin view could be a strong "contribution" chapter.
 - Content authoring: questions are currently hand-edited JSON/hardcoded C# — a simple in-editor or web authoring tool would be a solid engineering contribution.
 - Code health as a thesis chapter: the technical-debt findings above (dead code removal, unified video-transition component, merged leaderboard component) are legitimate refactor/methodology material, not just cleanup.
+- **Visual/effect identity**: the particle effects (§2b) are stock asset-pack content with no thematic tie to the quiz (ice/fire/confetti) — a custom or at least re-skinned effect language tied to the AI/Computing/Cybersecurity course tracks could be a meaningful, contained visual-design contribution.
+- **Feedback video coverage gap**: only 6 of ~15 knowledge questions have a feedback video (`Feedback_Q4/5/6/8/9/10`); the rest silently have none despite the data schema supporting it — worth deciding whether to produce the missing ones or design a fallback (e.g. a generic correct/wrong feedback video or in-headset text explanation using the JSON's existing `explanation` field, which is currently loaded but never displayed anywhere).
+- **UI polish**: every button in the app uses Unity's default `Button`/`Image` component with no custom hover/press states, animation, or sound distinct from the shared correct/wrong stings — a real opportunity for a "before/after" UI-quality comparison in a thesis.
+- **Interaction model**: the entire app currently uses one input pattern throughout — point-and-click via laser pointer (`OVRRaycaster`) at flat 2D buttons on world-space canvases. Worth deciding deliberately whether that's the right model to keep for the whole experience, or whether specific moments (e.g. the recommendation reveal, or picking between course tracks) could benefit from a more spatial/embodied interaction — without assuming the answer, since a full room-scale rework is a large, separate scope decision.
 
 ---
 
-*Compiled by reading the project's C# scripts, scene structure, JSON question data, and `Packages/manifest.json` directly — not from assumptions. Use this as grounding context; treat §9 as conversation starters, not conclusions.*
+*Compiled by reading the project's C# scripts, scene structure, JSON question data, and `Packages/manifest.json` directly, plus (2026-08, this update) by live-inspecting `TechLab.unity` and `ClassRoom.unity` via the Unity Editor MCP connector — actual canvas hierarchies, wired effect prefabs, and video assets confirmed directly against the running Editor, not inferred from code alone. Use this as grounding context; treat §9 as conversation starters, not conclusions.*
