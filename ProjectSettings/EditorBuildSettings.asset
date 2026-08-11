@@ -20,12 +20,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/demo22.unity
     guid: 57baa13ef6bd9614e9a917fd1d2ffb6e
-  - enabled: 1
+  - enabled: 0
     path: Assets/TechLab.unity
     guid: 7519a63348888724699a17fec864f3eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ClassRoom.unity
     guid: b6830c877e74fb645bf18f3f9e3e092f
+  - enabled: 0
+    path: Assets/PreferenceMechanic.unity
+    guid: d6f371258c0292b479453e4a5417b7c7
+  - enabled: 1
+    path: Assets/PreferenceFlowTest.unity
+    guid: 318a59a585e8d0442a44ac2114a82282
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ae20820d33f535c43b0b87079a921638, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 398602bff96cdd144be39e1c6e6e5161, type: 2}

@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 /// <summary>
 /// "Light the Crystals" -- 5 empty crystal slots. Clicking a slot lights it and every
-/// slot before it (so the lit count is always an unambiguous 1-5), and can be freely
-/// re-clicked to change the count before it settles -- the player can always see exactly
-/// how many are lit. No number is ever displayed, just the crystals themselves.
+/// slot before it (so the lit count is always an unambiguous 1-5) and commits that as
+/// the answer -- fires OnAnswered so a flow controller can advance to the next question.
+/// No number is ever displayed, just the crystals themselves.
 /// </summary>
 public class CrystalLightingMechanic : MonoBehaviour
 {
@@ -17,39 +17,48 @@ public class CrystalLightingMechanic : MonoBehaviour
     [SerializeField] private Color unlitColor = new Color(0.4f, 0.4f, 0.5f, 0.6f);
     [SerializeField] private Color litColor = Color.white;
 
+    public event System.Action<int> OnAnswered;
     public int CurrentCount { get; private set; } = 0;
+    private bool answered;
 
     private void Start()
     {
         for (int i = 0; i < crystalButtons.Length; i++)
         {
             int slot = i + 1; // 1..5
-            crystalButtons[i].onClick.AddListener(() => SetCount(slot));
+            crystalButtons[i].onClick.AddListener(() => Choose(slot));
         }
-        SetCount(0, playFx: false);
+        ResetMechanic();
     }
 
-    private void SetCount(int count, bool playFx = true)
+    /// <summary>Called by the flow controller before showing this mechanic for a new question.</summary>
+    public void ResetMechanic()
     {
-        CurrentCount = count;
+        answered = false;
+        CurrentCount = 0;
         for (int i = 0; i < crystalImages.Length; i++)
-        {
-            bool lit = (i + 1) <= count;
-            crystalImages[i].color = lit ? litColor : unlitColor;
-        }
+            crystalImages[i].color = unlitColor;
+    }
 
-        if (playFx && count > 0)
-        {
-            var slotTransform = crystalButtons[count - 1].transform;
-            if (confirmEffectPrefab != null)
-            {
-                var fx = Instantiate(confirmEffectPrefab, slotTransform.position, Quaternion.identity);
-                Destroy(fx, 2f);
-            }
-            if (audioSource != null && litClip != null)
-                audioSource.PlayOneShot(litClip);
-        }
+    private void Choose(int count)
+    {
+        if (answered) return;
+        answered = true;
+        CurrentCount = count;
 
-        Debug.Log($"[CrystalLightingMechanic] current count = {count}/5"); // verification only
+        for (int i = 0; i < crystalImages.Length; i++)
+            crystalImages[i].color = (i + 1) <= count ? litColor : unlitColor;
+
+        var slotTransform = crystalButtons[count - 1].transform;
+        if (confirmEffectPrefab != null)
+        {
+            var fx = Instantiate(confirmEffectPrefab, slotTransform.position, Quaternion.identity);
+            Destroy(fx, 2f);
+        }
+        if (audioSource != null && litClip != null)
+            audioSource.PlayOneShot(litClip);
+
+        Debug.Log($"[CrystalLightingMechanic] answered = {count}/5"); // verification only
+        OnAnswered?.Invoke(count);
     }
 }

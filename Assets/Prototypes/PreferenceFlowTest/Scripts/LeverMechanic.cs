@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// "The Lever" -- a handle that visibly rests at one of 5 marked notches. Point and click
-/// a notch (same laser-pointer pattern as the rest of the mechanics) and the handle moves
-/// to rest there, so the player can always see exactly which position it's holding.
+/// "The Lever" -- a handle that visibly rests at one of 5 marked notches. Clicking a
+/// notch moves the handle to rest there and commits that as the answer -- fires
+/// OnAnswered so a flow controller can advance to the next question.
 /// </summary>
 public class LeverMechanic : MonoBehaviour
 {
@@ -15,8 +15,11 @@ public class LeverMechanic : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clunkClip;
     [SerializeField] private float moveDuration = 0.18f;
+    [SerializeField] private Vector2 restPosition = new Vector2(0f, 25f); // where the handle sits before answering
 
+    public event System.Action<int> OnAnswered;
     public int CurrentPosition { get; private set; } = -1;
+    private bool answered;
     private Coroutine moveRoutine;
 
     private void Start()
@@ -24,15 +27,28 @@ public class LeverMechanic : MonoBehaviour
         for (int i = 0; i < notchButtons.Length; i++)
         {
             int position = i + 1; // 1..5
-            notchButtons[i].onClick.AddListener(() => SetPosition(position));
+            notchButtons[i].onClick.AddListener(() => Choose(position));
         }
+        ResetMechanic();
     }
 
-    private void SetPosition(int position)
+    /// <summary>Called by the flow controller before showing this mechanic for a new question.</summary>
+    public void ResetMechanic()
     {
-        CurrentPosition = position;
+        answered = false;
+        CurrentPosition = -1;
         if (moveRoutine != null) StopCoroutine(moveRoutine);
-        moveRoutine = StartCoroutine(MoveHandle(notchPositions[position - 1].localPosition));
+        if (handle != null) handle.anchoredPosition = restPosition;
+    }
+
+    private void Choose(int position)
+    {
+        if (answered) return;
+        answered = true;
+        CurrentPosition = position;
+
+        if (moveRoutine != null) StopCoroutine(moveRoutine);
+        moveRoutine = StartCoroutine(MoveHandle(notchPositions[position - 1].anchoredPosition));
 
         if (confirmEffectPrefab != null)
         {
@@ -42,19 +58,20 @@ public class LeverMechanic : MonoBehaviour
         if (audioSource != null && clunkClip != null)
             audioSource.PlayOneShot(clunkClip);
 
-        Debug.Log($"[LeverMechanic] position = {position}/5"); // verification only
+        Debug.Log($"[LeverMechanic] answered = {position}/5"); // verification only
+        OnAnswered?.Invoke(position);
     }
 
-    private System.Collections.IEnumerator MoveHandle(Vector3 target)
+    private System.Collections.IEnumerator MoveHandle(Vector2 target)
     {
-        Vector3 start = handle.localPosition;
+        Vector2 start = handle.anchoredPosition;
         float t = 0f;
         while (t < moveDuration)
         {
             t += Time.deltaTime;
-            handle.localPosition = Vector3.Lerp(start, target, t / moveDuration);
+            handle.anchoredPosition = Vector2.Lerp(start, target, t / moveDuration);
             yield return null;
         }
-        handle.localPosition = target;
+        handle.anchoredPosition = target;
     }
 }
